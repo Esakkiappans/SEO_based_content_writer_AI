@@ -1,48 +1,25 @@
 # SEO Based Content Writer
-  ┌─────────────────────────────────────────────────────────────┐
-  │                       SEO-Based Content Writer                │
-  └─────────────────────────────────────────────────────────────┘
-                                 ▲
-                                 │
-                                 │ Enter URL
-                                 │
-                                 ▼
-  ┌───────────────────────────────────────────────────────────┐
-  │                          Load Data                        │
-  │           (Fetch and clean HTML content)                  │
-  └───────────────────────────────────────────────────────────┘
-                                 ▲
-                                 │
-                                 │
-                                 ▼
-  ┌───────────────────────────────────────────────────────────┐
-  │                          Process                         │
-  │               (Create vector store from text)              │
-  └───────────────────────────────────────────────────────────┘
-                                 ▲
-                                 │
-                                 │
-                                 ▼
-  ┌───────────────────────────────────────────────────────────┐
-  │                          Ask Question                     │
-  │               (Generate SEO-friendly content)              │
-  └───────────────────────────────────────────────────────────┘
-                                 ▲
-                                 │
-                                 │
-                                 ▼
-  ┌───────────────────────────────────────────────────────────┐
-  │                          Generate Content                  │
-  │               (Use vector store to generate content)       │
-  └───────────────────────────────────────────────────────────┘
-                                 ▲
-                                 │
-                                 │
-                                 ▼
-  ┌───────────────────────────────────────────────────────────┐
-  │                          Display Content                  │
-  │               (Display SEO-friendly content to user)        │
-  └───────────────────────────────────────────────────────────┘
+
+```mermaid
+graph LR
+
+A[User Inputs URL] --> B[Application Fetches Data]
+B --> C[Data is Cleaned and Processed]
+C --> D[Vector Store is Created]
+D --> E[User Asks Question]
+E --> F[Vector Store is Used to Find Relevant Information]
+F --> G[Content is Generated]
+G --> H[Generated Content is Displayed to User]
+
+classDef decision fill:#ddd,stroke:#333;
+classDef action fill:#fff,stroke:#333;
+classDef output fill:#f9d2d2,stroke:#333;
+
+class B,C,D,F,G action;
+class A,E,H output;
+
+
+  
 ## Overview
 
 The "SEO Based Content Writer" project is an AI-powered tool that assists in generating SEO-friendly content based on a given URL and user questions. It utilizes natural language processing (NLP) techniques, conversation chains, and embeddings to create informative and engaging content.
