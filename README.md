@@ -4,28 +4,28 @@
 
 The "SEO Based Content Writer" project is an AI-powered tool that assists in generating SEO-friendly content based on a given URL and user questions. It utilizes natural language processing (NLP) techniques, conversation chains, and embeddings to create informative and engaging content.
 
-## Architecture Diagram
+Architecture Diagram
++-------------------------------+
+|          User Interface       |
++-------------------------------+
+        |
+        v
++---------------------------------------------------------+ 
+|                  Backend Processing                      | 
+|                                                         | 
+|   +---------------------+      +---------------------+  | 
+|   |      Data Fetch     |      |      Text Pre-      |  | 
+|   |      from URL       |      |      processing     |  | 
+|   +---------------------+      +---------------------+  | 
+|                   |                     |                | 
+|                   v                     v                | 
+|                   +---------------------+                | 
+|                   |   Conversational    |                | 
+|                   |    Retrieval Chain  |                | 
+|                   +---------------------+                | 
+|                                                         | 
++---------------------------------------------------------+
 
-                           +-------------------------------+
-                           |          User Interface       |
-                           +-------------------------------+
-                                    |
-                                    v
-+---------------------------------------------------------+
-|                  Backend Processing                      |
-|                                                         |
-|   +---------------------+      +---------------------+  |
-|   |      Data Fetch     |      |      Text Pre-      |  |
-|   |      from URL       |      |      processing     |  |
-|   +---------------------+      +---------------------+  |
-|                   |                     |                |
-|                   v                     v                |
-|                   +---------------------+                |
-|                   |   Conversational    |                |
-|                   |    Retrieval Chain  |                |
-|                   +---------------------+                |
-|                                                         |
-+---------------------------------------------------------+
 
 
 ## Description
