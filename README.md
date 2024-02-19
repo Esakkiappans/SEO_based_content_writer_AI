@@ -1,59 +1,79 @@
 # SEO Based Content Writer
 
-This project is a web application that uses Streamlit, Langchain, and Hugging Face's transformer models to create SEO-optimized content based on a given URL. The application fetches the data from the URL, processes it, and uses it to answer user questions, providing SEO-friendly content as a response.
+## Overview
 
-## Table of Contents
-- [Features](#features)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Explanation](#explanation)
-  - [Data Fetching](#data-fetching)
-  - [Data Processing](#data-processing)
-  - [Content Creation](#content-creation)
-- [Diagram](#diagram)
-- [License](#license)
+The "SEO Based Content Writer" project is an AI-powered tool that assists in generating SEO-friendly content based on a given URL and user questions. It utilizes natural language processing (NLP) techniques, conversation chains, and embeddings to create informative and engaging content.
 
-## Features
-- Fetches data from a given URL
-- Processes the fetched data
-- Answers user questions based on the processed data
-- Provides SEO-friendly content as a response
+## Architecture Diagram
 
-## Requirements
-- Python 3.7 or higher
-- Streamlit
-- Langchain
-- Hugging Face Transformers
-- Requests
-- Beautiful Soup
+                                         +-------------------------------+
+                                         |          User Interface       |
+                                         +-------------------------------+
+                                                            |
+                                                            v
++---------------------------------------------------------+  |
+|                  Backend Processing                      |  |
+|                                                         |  |
+|   +---------------------+      +---------------------+  |  |
+|   |      Data Fetch     |      |      Text Pre-      |  |  |
+|   |      from URL       |      |      processing     |  |  |
+|   +---------------------+      +---------------------+  |  |
+|                         \            |                 |  |
+|                          \           v                 |  |
+|                         +------------------------------------+
+|                         |      Conversational       |
+|                         |       Retrieval Chain     |
+|                         +------------------------------------+
+|                                                             |
++-------------------------------------------------------------+
+
+
+## Description
+
+The project consists of a web-based user interface (UI) that allows users to input a URL and ask questions related to the document fetched from the URL. The backend processing involves several stages:
+
+1. **Data Fetch from URL**: The system fetches HTML content from the provided URL using the `requests` library. The HTML content is then cleaned and parsed to extract the main text content using BeautifulSoup.
+
+2. **Text Pre-processing**: The main text content undergoes pre-processing, including chunking into smaller segments, to optimize for processing efficiency and to ensure accurate semantic analysis.
+
+3. **Conversational Retrieval Chain**: The pre-processed text segments are embedded into vectors using Hugging Face Instruct Embeddings and stored in a vector store using FAISS. These embeddings are then used in a Conversational Retrieval Chain, which leverages a pre-trained language model (LLM) to respond to user questions in a conversational manner.
+
+## Usage
+
+1. Input a URL containing the content you want to analyze.
+2. Ask questions related to the document fetched from the URL.
+3. Click on the respective buttons to load data, process it, and generate content based on user questions.
 
 ## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your_username/SEO-Based-Content-Writer.git
 
-Install the required packages:
-  ```bash
-  pip install -r requirements.txt
+1. Clone the repository to your local machine:
 
-#Usage
-  Run the application:
-  ```bash
-  streamlit run app.py
+git clone https://github.com/your_username/SEO-Based-Content-Writer.git
 
-Enter the URL in the input field and click "Load Data".
 
-Process the loaded data by clicking "Process".
+2. Install the required dependencies using pip:
 
-Ask a question about the document and click "Create Content" to get the SEO-friendly response.
+pip install -r requirements.txt
 
-## Explanation
-Data Fetching
-The application fetches data from a given URL using the requests library. It then cleans the HTML content using Beautiful Soup to remove unwanted sections and extract the main content.
 
-## Data Processing
-The cleaned text is split into smaller chunks to create a vector store using Langchain's FAISS and CharacterTextSplitter. This vector store is used to find the most relevant information when answering user questions.
+3. Run the application using Streamlit:
 
-## Content Creation
-When a user asks a question, the application uses the vector store to find the most relevant information and generates an answer using Hugging Face's transformer models. The answer is provided as SEO-friendly content, which can be used for blog posts, articles, or other web content.
+streamlit run app.py
+
+
+## Technologies Used
+
+- Python
+- Streamlit
+- BeautifulSoup
+- Hugging Face Instruct Embeddings
+- FAISS
+- LangChain (custom library)
+- HTML/CSS
+
+## Contributors
+
+- [Esakkiappans](https://github.com/Esakkiappans)
+
+
+
