@@ -4,27 +4,50 @@
 
 The "SEO Based Content Writer" project is an AI-powered tool that assists in generating SEO-friendly content based on a given URL and user questions. It utilizes natural language processing (NLP) techniques, conversation chains, and embeddings to create informative and engaging content.
 
-Architecture Diagram
-+-------------------------------+
-|          User Interface       |
-+-------------------------------+
-        |
-        v
-+---------------------------------------------------------+ 
-|                  Backend Processing                      | 
-|                                                         | 
-|   +---------------------+      +---------------------+  | 
-|   |      Data Fetch     |      |      Text Pre-      |  | 
-|   |      from URL       |      |      processing     |  | 
-|   +---------------------+      +---------------------+  | 
-|                   |                     |                | 
-|                   v                     v                | 
-|                   +---------------------+                | 
-|                   |   Conversational    |                | 
-|                   |    Retrieval Chain  |                | 
-|                   +---------------------+                | 
-|                                                         | 
-+---------------------------------------------------------+
+  ┌─────────────────────────────────────────────────────────────┐
+  │                       SEO-Based Content Writer                │
+  └─────────────────────────────────────────────────────────────┘
+                                 ▲
+                                 │
+                                 │ Enter URL
+                                 │
+                                 ▼
+  ┌───────────────────────────────────────────────────────────┐
+  │                          Load Data                        │
+  │           (Fetch and clean HTML content)                  │
+  └───────────────────────────────────────────────────────────┘
+                                 ▲
+                                 │
+                                 │
+                                 ▼
+  ┌───────────────────────────────────────────────────────────┐
+  │                          Process                         │
+  │               (Create vector store from text)              │
+  └───────────────────────────────────────────────────────────┘
+                                 ▲
+                                 │
+                                 │
+                                 ▼
+  ┌───────────────────────────────────────────────────────────┐
+  │                          Ask Question                     │
+  │               (Generate SEO-friendly content)              │
+  └───────────────────────────────────────────────────────────┘
+                                 ▲
+                                 │
+                                 │
+                                 ▼
+  ┌───────────────────────────────────────────────────────────┐
+  │                          Generate Content                  │
+  │               (Use vector store to generate content)       │
+  └───────────────────────────────────────────────────────────┘
+                                 ▲
+                                 │
+                                 │
+                                 ▼
+  ┌───────────────────────────────────────────────────────────┐
+  │                          Display Content                  │
+  │               (Display SEO-friendly content to user)        │
+  └───────────────────────────────────────────────────────────┘
 
 
 
