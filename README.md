@@ -34,14 +34,13 @@ This project is a web application that uses Streamlit, Langchain, and Hugging Fa
    git clone https://github.com/your_username/SEO-Based-Content-Writer.git
 
 Install the required packages:
-```bash
-pip install -r requirements.txt
+  ```bash
+  pip install -r requirements.txt
 
 #Usage
-Run the application:
-
-```bash
-streamlit run app.py
+  Run the application:
+  ```bash
+  streamlit run app.py
 
 Enter the URL in the input field and click "Load Data".
 
