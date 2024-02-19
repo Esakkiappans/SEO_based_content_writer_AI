@@ -1,9 +1,4 @@
 # SEO Based Content Writer
-
-## Overview
-
-The "SEO Based Content Writer" project is an AI-powered tool that assists in generating SEO-friendly content based on a given URL and user questions. It utilizes natural language processing (NLP) techniques, conversation chains, and embeddings to create informative and engaging content.
-
   ┌─────────────────────────────────────────────────────────────┐
   │                       SEO-Based Content Writer                │
   └─────────────────────────────────────────────────────────────┘
@@ -48,12 +43,11 @@ The "SEO Based Content Writer" project is an AI-powered tool that assists in gen
   │                          Display Content                  │
   │               (Display SEO-friendly content to user)        │
   └───────────────────────────────────────────────────────────┘
+## Overview
 
+The "SEO Based Content Writer" project is an AI-powered tool that assists in generating SEO-friendly content based on a given URL and user questions. It utilizes natural language processing (NLP) techniques, conversation chains, and embeddings to create informative and engaging content.
 
-
-## Description
-
-The project consists of a web-based user interface (UI) that allows users to input a URL and ask questions related to the document fetched from the URL. The backend processing involves several stages:
+ ws users to input a URL and ask questions related to the document fetched from the URL. The backend processing involves several stages:
 
 1. **Data Fetch from URL**: The system fetches HTML content from the provided URL using the `requests` library. The HTML content is then cleaned and parsed to extract the main text content using BeautifulSoup.
 
